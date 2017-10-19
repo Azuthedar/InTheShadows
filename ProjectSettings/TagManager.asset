@@ -3,7 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - NewGame
+  - LoadGame
+  - Settings
+  - ExitGame
+  - Claire
+  - John
+  - Thomas
+  - Fire
+  - 1_Part
+  - 2_Part
+  - 3_Part
+  - 4_Part
   layers:
   - Default
   - TransparentFX

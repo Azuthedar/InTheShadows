@@ -1,0 +1,494 @@
+fileFormatVersion: 2
+guid: 38a300d95ca714312bf4e8b55427c0a1
+timeCreated: 1508407931
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: feather
+    100002: feather 1
+    100004: feather 10
+    100006: feather 11
+    100008: feather 12
+    100010: feather 13
+    100012: feather 2
+    100014: feather 3
+    100016: feather 4
+    100018: feather 5
+    100020: feather 6
+    100022: feather 7
+    100024: feather 8
+    100026: feather 9
+    100028: handler
+    100030: ID103
+    100032: ID111
+    100034: ID119
+    100036: ID127
+    100038: ID135
+    100040: ID143
+    100042: ID151
+    100044: ID159
+    100046: ID167
+    100048: ID173
+    100050: ID177
+    100052: ID181
+    100054: ID185
+    100056: ID189
+    100058: ID193
+    100060: ID197
+    100062: ID201
+    100064: ID205
+    100066: ID209
+    100068: ID213
+    100070: ID217
+    100072: ID221
+    100074: ID225
+    100076: ID229
+    100078: ID233
+    100080: ID237
+    100082: ID241
+    100084: ID245
+    100086: ID249
+    100088: ID25
+    100090: ID253
+    100092: ID257
+    100094: ID261
+    100096: ID265
+    100098: ID269
+    100100: ID273
+    100102: ID277
+    100104: ID281
+    100106: ID285
+    100108: ID289
+    100110: ID293
+    100112: ID297
+    100114: ID301
+    100116: ID305
+    100118: ID309
+    100120: ID313
+    100122: ID317
+    100124: ID336
+    100126: ID344
+    100128: ID352
+    100130: ID360
+    100132: ID38
+    100134: ID382
+    100136: ID382 1
+    100138: ID382 2
+    100140: ID382 3
+    100142: ID382 4
+    100144: ID382 5
+    100146: ID382 6
+    100148: ID390
+    100150: ID390 1
+    100152: ID390 2
+    100154: ID390 3
+    100156: ID390 4
+    100158: ID390 5
+    100160: ID390 6
+    100162: ID416
+    100164: ID416 1
+    100166: ID416 2
+    100168: ID416 3
+    100170: ID416 4
+    100172: ID416 5
+    100174: ID416 6
+    100176: ID424
+    100178: ID424 1
+    100180: ID424 2
+    100182: ID424 3
+    100184: ID424 4
+    100186: ID424 5
+    100188: ID424 6
+    100190: ID46
+    100192: ID54
+    100194: ID87
+    100196: ID95
+    100198: instance_0
+    100200: instance_1
+    100202: instance_10
+    100204: instance_10 1
+    100206: instance_11
+    100208: instance_11 1
+    100210: instance_12
+    100212: instance_12 1
+    100214: instance_13
+    100216: instance_13 1
+    100218: instance_14
+    100220: instance_2
+    100222: instance_3
+    100224: instance_4
+    100226: instance_5
+    100228: instance_6
+    100230: instance_7
+    100232: instance_7 1
+    100234: instance_8
+    100236: instance_8 1
+    100238: instance_9
+    100240: instance_9 1
+    100242: shield_boss
+    100244: shield_maind_plate
+    100246: skp_camera_Last_Saved_SketchUp_View
+    100248: wing
+    100250: wing 1
+    100252: wingbase
+    100254: //RootNode
+    100256: winged_shield
+    100258: wings
+    400000: feather
+    400002: feather 1
+    400004: feather 10
+    400006: feather 11
+    400008: feather 12
+    400010: feather 13
+    400012: feather 2
+    400014: feather 3
+    400016: feather 4
+    400018: feather 5
+    400020: feather 6
+    400022: feather 7
+    400024: feather 8
+    400026: feather 9
+    400028: handler
+    400030: ID103
+    400032: ID111
+    400034: ID119
+    400036: ID127
+    400038: ID135
+    400040: ID143
+    400042: ID151
+    400044: ID159
+    400046: ID167
+    400048: ID173
+    400050: ID177
+    400052: ID181
+    400054: ID185
+    400056: ID189
+    400058: ID193
+    400060: ID197
+    400062: ID201
+    400064: ID205
+    400066: ID209
+    400068: ID213
+    400070: ID217
+    400072: ID221
+    400074: ID225
+    400076: ID229
+    400078: ID233
+    400080: ID237
+    400082: ID241
+    400084: ID245
+    400086: ID249
+    400088: ID25
+    400090: ID253
+    400092: ID257
+    400094: ID261
+    400096: ID265
+    400098: ID269
+    400100: ID273
+    400102: ID277
+    400104: ID281
+    400106: ID285
+    400108: ID289
+    400110: ID293
+    400112: ID297
+    400114: ID301
+    400116: ID305
+    400118: ID309
+    400120: ID313
+    400122: ID317
+    400124: ID336
+    400126: ID344
+    400128: ID352
+    400130: ID360
+    400132: ID38
+    400134: ID382
+    400136: ID382 1
+    400138: ID382 2
+    400140: ID382 3
+    400142: ID382 4
+    400144: ID382 5
+    400146: ID382 6
+    400148: ID390
+    400150: ID390 1
+    400152: ID390 2
+    400154: ID390 3
+    400156: ID390 4
+    400158: ID390 5
+    400160: ID390 6
+    400162: ID416
+    400164: ID416 1
+    400166: ID416 2
+    400168: ID416 3
+    400170: ID416 4
+    400172: ID416 5
+    400174: ID416 6
+    400176: ID424
+    400178: ID424 1
+    400180: ID424 2
+    400182: ID424 3
+    400184: ID424 4
+    400186: ID424 5
+    400188: ID424 6
+    400190: ID46
+    400192: ID54
+    400194: ID87
+    400196: ID95
+    400198: instance_0
+    400200: instance_1
+    400202: instance_10
+    400204: instance_10 1
+    400206: instance_11
+    400208: instance_11 1
+    400210: instance_12
+    400212: instance_12 1
+    400214: instance_13
+    400216: instance_13 1
+    400218: instance_14
+    400220: instance_2
+    400222: instance_3
+    400224: instance_4
+    400226: instance_5
+    400228: instance_6
+    400230: instance_7
+    400232: instance_7 1
+    400234: instance_8
+    400236: instance_8 1
+    400238: instance_9
+    400240: instance_9 1
+    400242: shield_boss
+    400244: shield_maind_plate
+    400246: skp_camera_Last_Saved_SketchUp_View
+    400248: wing
+    400250: wing 1
+    400252: wingbase
+    400254: //RootNode
+    400256: winged_shield
+    400258: wings
+    2300000: feather
+    2300002: feather 1
+    2300004: feather 10
+    2300006: feather 11
+    2300008: feather 12
+    2300010: feather 13
+    2300012: feather 2
+    2300014: feather 3
+    2300016: feather 4
+    2300018: feather 5
+    2300020: feather 6
+    2300022: feather 7
+    2300024: feather 8
+    2300026: feather 9
+    2300028: handler
+    2300030: ID103
+    2300032: ID111
+    2300034: ID119
+    2300036: ID127
+    2300038: ID135
+    2300040: ID143
+    2300042: ID151
+    2300044: ID159
+    2300046: ID25
+    2300048: ID336
+    2300050: ID344
+    2300052: ID352
+    2300054: ID360
+    2300056: ID38
+    2300058: ID382
+    2300060: ID382 1
+    2300062: ID382 2
+    2300064: ID382 3
+    2300066: ID382 4
+    2300068: ID382 5
+    2300070: ID382 6
+    2300072: ID390
+    2300074: ID390 1
+    2300076: ID390 2
+    2300078: ID390 3
+    2300080: ID390 4
+    2300082: ID390 5
+    2300084: ID390 6
+    2300086: ID416
+    2300088: ID416 1
+    2300090: ID416 2
+    2300092: ID416 3
+    2300094: ID416 4
+    2300096: ID416 5
+    2300098: ID416 6
+    2300100: ID424
+    2300102: ID424 1
+    2300104: ID424 2
+    2300106: ID424 3
+    2300108: ID424 4
+    2300110: ID424 5
+    2300112: ID424 6
+    2300114: ID46
+    2300116: ID54
+    2300118: ID87
+    2300120: ID95
+    2300122: shield_boss
+    2300124: shield_maind_plate
+    2300126: wingbase
+    3300000: feather
+    3300002: feather 1
+    3300004: feather 10
+    3300006: feather 11
+    3300008: feather 12
+    3300010: feather 13
+    3300012: feather 2
+    3300014: feather 3
+    3300016: feather 4
+    3300018: feather 5
+    3300020: feather 6
+    3300022: feather 7
+    3300024: feather 8
+    3300026: feather 9
+    3300028: handler
+    3300030: ID103
+    3300032: ID111
+    3300034: ID119
+    3300036: ID127
+    3300038: ID135
+    3300040: ID143
+    3300042: ID151
+    3300044: ID159
+    3300046: ID25
+    3300048: ID336
+    3300050: ID344
+    3300052: ID352
+    3300054: ID360
+    3300056: ID38
+    3300058: ID382
+    3300060: ID382 1
+    3300062: ID382 2
+    3300064: ID382 3
+    3300066: ID382 4
+    3300068: ID382 5
+    3300070: ID382 6
+    3300072: ID390
+    3300074: ID390 1
+    3300076: ID390 2
+    3300078: ID390 3
+    3300080: ID390 4
+    3300082: ID390 5
+    3300084: ID390 6
+    3300086: ID416
+    3300088: ID416 1
+    3300090: ID416 2
+    3300092: ID416 3
+    3300094: ID416 4
+    3300096: ID416 5
+    3300098: ID416 6
+    3300100: ID424
+    3300102: ID424 1
+    3300104: ID424 2
+    3300106: ID424 3
+    3300108: ID424 4
+    3300110: ID424 5
+    3300112: ID424 6
+    3300114: ID46
+    3300116: ID54
+    3300118: ID87
+    3300120: ID95
+    3300122: shield_boss
+    3300124: shield_maind_plate
+    3300126: wingbase
+    4300000: shield_maind_plate
+    4300002: ID25
+    4300004: ID38
+    4300006: ID46
+    4300008: ID54
+    4300010: shield_boss
+    4300012: wingbase
+    4300014: ID87
+    4300016: ID95
+    4300018: ID103
+    4300020: ID111
+    4300022: ID119
+    4300024: ID127
+    4300026: ID135
+    4300028: ID143
+    4300030: ID151
+    4300032: ID159
+    4300034: handler
+    4300036: ID336
+    4300038: ID344
+    4300040: ID352
+    4300042: ID360
+    4300044: feather
+    4300046: ID382
+    4300048: ID390
+    4300050: feather
+    4300052: ID416
+    4300054: ID424
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

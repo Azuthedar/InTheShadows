@@ -16,6 +16,5 @@ public class DayNightCycle : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		this.transform.Rotate (Vector3.right * this._speed * Time.deltaTime);
-
 	}
 }
