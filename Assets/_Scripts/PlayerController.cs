@@ -6,57 +6,72 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 
+	public GameObject	difficulty;
+
 	[SerializeField]
 	private float	_rotSpeed = 10f;
+	[SerializeField]
+	private float	_moveSpeed = 1f;
 	[SerializeField]
 	private float	_autoRotSpeed = 10f;
 	private Behaviour _halo;
 	private bool	_selected = false;
+	private Vector3 	_initialPos;
 	private Quaternion _initialRot;
 	private bool	_canSelect = true;
+	private bool	_rayHit = false;
+	[SerializeField]
+	private float	_leniency = 40f;
 
 	void Start () {
 		this._halo = (Behaviour)GetComponent("Halo");
 		this._initialRot = this.transform.rotation;
-		this.transform.rotation = Quaternion.Euler (Random.Range (0.0f, 360.0f), Random.Range (0.0f, 360.0f), 0);
+		this._initialPos = this.transform.position;
+
+
+		while (Quaternion.Angle(this.transform.rotation, this._initialRot) < 40)
+		{
+			this.initialRotation ();
+		}
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
-
-		Debug.Log ("Current: " + Mathf.Cos (this.transform.rotation.z)+ "\nInitial: " + Mathf.Cos (this._initialRot.z));
-
 		this.moveSpecifiedGO (this.tag);
 		this.checkRotation ();
 	}
 
 	void moveSpecifiedGO(string tag)
 	{
-		if (CompareTag(tag))
+		this.doRayCast ();
+
+		if (this._rayHit)
 		{
-			float horizontal = Input.GetAxis("Mouse X") * this._rotSpeed * Time.deltaTime;
-			float vertical = Input.GetAxis("Mouse Y") * this._rotSpeed * Time.deltaTime * -1;
+			float horizontal = Input.GetAxis("Mouse X") * Time.deltaTime;
+			float vertical = Input.GetAxis("Mouse Y") * Time.deltaTime * -1;
 			if (this._canSelect)
 			{
-				if (Input.GetMouseButton (0) && Input.GetKey (KeyCode.LeftShift)) // Move Object
+				if (Input.GetMouseButton (0) && Input.GetKey (KeyCode.LeftShift) && this.difficulty.GetComponent<DifficultyController>().difficulty > 2) // Move Object
 				{
 					this._selected = true;
-					//TODO: MOVE OBJECT	
+					this.transform.position = new Vector3(this.transform.position.x, Mathf.Clamp(this.transform.position.y + this._moveSpeed * vertical * -1, this._initialPos.y - 0.15f, this._initialPos.y + 0.15f), this.transform.position.z);
 				}
-				else if (Input.GetMouseButton (0) && Input.GetKey (KeyCode.LeftControl)) // Rotate Vertically
+				else if (Input.GetMouseButton (0) && Input.GetKey (KeyCode.LeftControl) && this.difficulty.GetComponent<DifficultyController>().difficulty > 1) // Rotate Vertically
 				{
 					this._selected = true;
-					this.transform.Rotate (new Vector3 (vertical, 0));
+					this.transform.Rotate (new Vector3 (vertical * this._rotSpeed, 0));
 				}
 				else if (Input.GetMouseButton (0)) // Rotate Horizontally
 				{
 					this._selected = true;
-					this.transform.Rotate (new Vector3 (0, horizontal));
+					this.transform.Rotate (new Vector3 (0, horizontal * this._rotSpeed));
 				}
 
 			}
 			if (!Input.GetMouseButton (0))
+			{
+				this._rayHit = false;
 				this._selected = false;
+			}
 			
 			if (this._selected)
 			{
@@ -69,30 +84,62 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-	void checkRotation()
+	void doRayCast()
 	{
-		float angle = Quaternion.Angle (this.transform.rotation, this._initialRot);
-
-		if (Mathf.Abs(angle) <= 40f)
+		if (Input.GetMouseButtonDown(0))
 		{
-			Debug.Log ("AutoRotating");
-			this._canSelect = false; // Remove control from the player
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			RaycastHit hit;
 
-			this.transform.rotation = Quaternion.RotateTowards (this.transform.rotation, this._initialRot, this._autoRotSpeed * Time.deltaTime);
-		}
-		if (Mathf.Abs(angle) == 0f)
-		{
-			Debug.Log ("Level Completed");
+			if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+			{
+				if (hit.collider.tag == tag)
+				{
+					this._rayHit = true;
+				}
+			}
 		}
 	}
 
-//	void OnMouseOver()
-//	{
-//		GetComponent<Renderer>().material.shader = Shader.Find("Particles/VertexLit Blended");
-//	}
-//
-//	void OnMouseExit()
-//	{
-//		GetComponent<Renderer>().material.shader = Shader.Find("Standard");
-//	}
+	void checkRotation()
+	{
+		float offset_x = Mathf.Abs(Mathf.DeltaAngle (this._initialRot.x, transform.rotation.eulerAngles.x));
+		float offset_y = Mathf.Abs(Mathf.DeltaAngle (this._initialRot.y, transform.rotation.eulerAngles.y));
+		if ((offset_x <= this._leniency || offset_x >= 180 - this._leniency) && offset_y <= this._leniency)
+		{
+			this._canSelect = false;
+			Invoke ("InvokeLevelComplete", 5f);
+		}
+		if (!this._canSelect)
+		{
+			this.transform.rotation = Quaternion.RotateTowards (this.transform.rotation, this._initialRot, this._autoRotSpeed * Time.deltaTime);
+			this.transform.position = Vector3.MoveTowards (this.transform.position, this._initialPos, this._moveSpeed / 4 * Time.deltaTime);
+		}
+		
+	}
+#region Difficulty handlers
+	void initialRotation()
+	{
+		if (this.difficulty.GetComponent<DifficultyController>().difficulty == 1)
+		{
+			this.transform.rotation = Quaternion.Euler (0, Random.Range (0.0f, 360.0f), 0);
+		}
+		else if (this.difficulty.GetComponent<DifficultyController>().difficulty == 2)
+		{
+			this.transform.rotation = Quaternion.Euler (Random.Range (0.0f, 360.0f), Random.Range (0.0f, 360.0f), 0);
+		}
+		else if (this.difficulty.GetComponent<DifficultyController>().difficulty == 3)
+		{
+			this.transform.rotation = Quaternion.Euler (Random.Range (0.0f, 360.0f), Random.Range (0.0f, 360.0f), 0);
+		}
+
+	}
+#endregion
+
+#region Invoke
+	void InvokeLevelComplete()
+	{
+		Debug.Log ("Level Completed");
+	}
+#endregion
 }
