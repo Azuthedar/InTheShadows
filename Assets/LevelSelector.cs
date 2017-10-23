@@ -16,9 +16,9 @@ public class LevelSelector : MonoBehaviour {
 
 	void Start ()
 	{
-		this._completedColor = new Color (0.1f, 0.5f, 0.1f);
-		this._lockedColor = new Color (0.5f, 0.1f, 0.1f);
-		this._availableColor = new Color (0.2f, 0.2f, 0.6f);
+		this._completedColor = new Color (0.3f, 1f, 0.2f);
+		this._lockedColor = new Color (1f, 0.3f, 0.3f);
+		this._availableColor = new Color (0.4f, 0.4f, 1.0f);
 
 		if (this.name == "lvl1")
 		{
@@ -82,7 +82,7 @@ public class LevelSelector : MonoBehaviour {
 
 	void OnMouseEnter()
 	{
-		gameObject.GetComponent<Renderer> ().material.color = new Color (0.2f, 0.2f, 0.2f);
+		gameObject.GetComponent<Renderer> ().material.color = new Color (0.5f, 0.5f, 0.5f);
 	}
 
 	void OnMouseExit()
