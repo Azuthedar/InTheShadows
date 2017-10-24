@@ -17,17 +17,13 @@ public class MenuController : MonoBehaviour {
 	void OnClick()
 	{
 		Debug.Log ("Clicked");
-		if (CompareTag("NewGame"))
+		if (CompareTag("NMode"))
 		{
-			SceneManager.LoadScene (0);
+			SceneManager.LoadScene (1);
 		}
-		else if (CompareTag("LoadGame"))
+		else if (CompareTag("TMode"))
 		{
 			//TODO: Load saved Scenemanager INDEX
-		}
-		else if (CompareTag("Settings"))
-		{
-			//TODO: Go to settings Menu
 		}
 		else if (CompareTag("ExitGame"))
 		{

@@ -442,6 +442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   difficulty: {fileID: 1472946793}
   _rotSpeed: 100
+  _moveSpeed: 1
   _autoRotSpeed: 50
   _leniency: 10
 --- !u!4 &964813754
@@ -7762,6 +7763,48 @@ Transform:
   m_Father: {fileID: 1345290883}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: -44.85}
+--- !u!1 &1723204138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1723204140}
+  - component: {fileID: 1723204139}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1723204139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1723204138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb60e3a6585e4ea8aee9b6624c89673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goList:
+  - {fileID: 964813752}
+--- !u!4 &1723204140
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1723204138}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.3355301, y: 3.9957204, z: 3.8452277}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1796723047
 Prefab:
   m_ObjectHideFlags: 0

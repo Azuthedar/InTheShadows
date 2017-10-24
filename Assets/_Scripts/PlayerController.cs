@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
@@ -22,12 +23,12 @@ public class PlayerController : MonoBehaviour {
 	private bool	_rayHit = false;
 	[SerializeField]
 	private float	_leniency = 40f;
+	private bool	_inPos = false;
 
 	void Start () {
 		this._halo = (Behaviour)GetComponent("Halo");
 		this._initialRot = this.transform.rotation;
 		this._initialPos = this.transform.position;
-
 
 		while (Quaternion.Angle(this.transform.rotation, this._initialRot) < 40)
 		{
@@ -103,12 +104,14 @@ public class PlayerController : MonoBehaviour {
 
 	void checkRotation()
 	{
+		bool levelComplete = false;
+
 		float offset_x = Mathf.Abs(Mathf.DeltaAngle (this._initialRot.x, transform.rotation.eulerAngles.x));
 		float offset_y = Mathf.Abs(Mathf.DeltaAngle (this._initialRot.y, transform.rotation.eulerAngles.y));
 		if ((offset_x <= this._leniency || offset_x >= 180 - this._leniency) && offset_y <= this._leniency)
 		{
 			this._canSelect = false;
-			Invoke ("InvokeLevelComplete", 5f);
+			this._inPos = true;
 		}
 		if (!this._canSelect)
 		{
@@ -136,10 +139,10 @@ public class PlayerController : MonoBehaviour {
 	}
 #endregion
 
-#region Invoke
-	void InvokeLevelComplete()
+#region Getters / setters
+	public bool getInPos()
 	{
-		Debug.Log ("Level Completed");
+		return (this._inPos);	
 	}
 #endregion
 }

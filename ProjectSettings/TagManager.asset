@@ -4,9 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - NewGame
-  - LoadGame
-  - Settings
   - ExitGame
   - Claire
   - John
@@ -16,6 +13,8 @@ TagManager:
   - 2_Part
   - 3_Part
   - 4_Part
+  - NMode
+  - TMode
   layers:
   - Default
   - TransparentFX
