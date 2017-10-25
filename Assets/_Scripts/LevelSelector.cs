@@ -9,16 +9,18 @@ public class LevelSelector : MonoBehaviour {
 
 	private bool		_isLocked = true;
 	private bool		_isCompleted = false;
-
-	private float 		_incSize = 2f;
+	private bool		_shouldRotate = false;
 
 	private Color		_completedColor;
 	private Color 		_lockedColor;
 	private Color		_availableColor;
 
+	private Quaternion	_initRot;
+
 	void Start ()
 	{
-		this._incSize = this.transform.position.z;
+		this._initRot = this.transform.rotation;
+
 		this._completedColor = new Color (0.3f, 1f, 0.2f);
 		this._lockedColor = new Color (1f, 0.3f, 0.3f);
 		this._availableColor = new Color (0.4f, 0.4f, 1.0f);
@@ -46,24 +48,33 @@ public class LevelSelector : MonoBehaviour {
 		{
 			PlayerPrefs.DeleteAll ();
 		}
+
+		if (this._shouldRotate)
+		{
+			this.transform.rotation = Quaternion.RotateTowards (this.transform.rotation, this._initRot, 1f);
+		}
+		if (Quaternion.Angle(this.transform.rotation, this._initRot) == 0)
+		{
+			this._shouldRotate = false;
+		}
 	}
 
 
 
 	void OnMouseEnter()
 	{
-		this.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y, Mathf.Lerp (this.transform.position.z, this._incSize - 0.8f, 0.5f));
 		gameObject.GetComponent<Renderer> ().material.color = new Color (0.5f, 0.5f, 0.5f);
 	}
 
 	void OnMouseExit()
 	{
-		this.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y, Mathf.Lerp (this.transform.position.z, this._incSize + 0.8f, 0.5f));
+		this._shouldRotate = true;
 		gameObject.GetComponent<Renderer> ().material.color = new Color (1f, 1f, 1f);
 	}
 
 	void OnMouseOver()
 	{
+		this.transform.Rotate (Vector3.forward * 2f);
 		if (Input.GetMouseButtonDown (0))
 		{
 			if (!this._isLocked)
@@ -90,37 +101,45 @@ public class LevelSelector : MonoBehaviour {
 
 	void CheckPlayerPref()
 	{
-		if (PlayerPrefs.GetInt("lvl1", 1) == 1 && this.name == "lvl1")
+		if (PlayerPrefs.GetInt ("NormalMode", 0) == 1)
 		{
-			this._isLocked = false;
-		}
-		if (PlayerPrefs.GetInt("lvl2", 0) == 1 && this.name == "lvl2")
-		{
-			this._isLocked = false;
-		}
-		if (PlayerPrefs.GetInt("lvl3", 0) == 1 && this.name == "lvl3")
-		{
-			this._isLocked = false;
-		}
-		if (PlayerPrefs.GetInt("lvl4", 0) == 1 && this.name == "lvl4")
-		{
-			this._isLocked = false;
-		}
+			if (PlayerPrefs.GetInt ("lvl1", 1) == 1 && this.name == "lvl1")
+			{
+				this._isLocked = false;
+			}
+			if (PlayerPrefs.GetInt ("lvl2", 0) == 1 && this.name == "lvl2")
+			{
+				this._isLocked = false;
+			}
+			if (PlayerPrefs.GetInt ("lvl3", 0) == 1 && this.name == "lvl3")
+			{
+				this._isLocked = false;
+			}
+			if (PlayerPrefs.GetInt ("lvl4", 0) == 1 && this.name == "lvl4")
+			{
+				this._isLocked = false;
+			}
 
-		if (PlayerPrefs.GetInt("lvl1", 1) == 2 && this.name == "lvl1")
-		{
-			this._isCompleted = true;
+			if (PlayerPrefs.GetInt ("lvl1", 1) == 2 && this.name == "lvl1")
+			{
+				this._isCompleted = true;
+			}
+			if (PlayerPrefs.GetInt ("lvl2", 0) == 2 && this.name == "lvl2")
+			{
+				this._isCompleted = true;
+			}
+			if (PlayerPrefs.GetInt ("lvl3", 0) == 2 && this.name == "lvl3")
+			{
+				this._isCompleted = true;
+			}
+			if (PlayerPrefs.GetInt ("lvl4", 0) == 2 && this.name == "lvl4")
+			{
+				this._isCompleted = true;
+			}
 		}
-		if (PlayerPrefs.GetInt("lvl2", 0) == 2 && this.name == "lvl2")
+		else
 		{
-			this._isCompleted = true;
-		}
-		if (PlayerPrefs.GetInt("lvl3", 0) == 2 && this.name == "lvl3")
-		{
-			this._isCompleted = true;
-		}
-		if (PlayerPrefs.GetInt("lvl4", 0) == 2 && this.name == "lvl4")
-		{
+			this._isLocked = false;
 			this._isCompleted = true;
 		}
 	}

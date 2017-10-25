@@ -87,6 +87,7 @@
 -define:ENABLE_NATIVE_ARRAY_CHECKS
 -define:UNITY_TEAM_LICENSE
 -define:CROSS_PLATFORM_INPUT
+'Assets/GameManager.cs'
 'Assets/_Scripts/CameraController.cs'
 'Assets/_Scripts/DayNightCycle.cs'
 'Assets/_Scripts/DifficultyController.cs'

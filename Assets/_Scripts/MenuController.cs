@@ -19,11 +19,13 @@ public class MenuController : MonoBehaviour {
 		Debug.Log ("Clicked");
 		if (CompareTag("NMode"))
 		{
+			PlayerPrefs.SetInt ("NormalMode", 1);
 			SceneManager.LoadScene (1);
 		}
 		else if (CompareTag("TMode"))
 		{
-			//TODO: Load saved Scenemanager INDEX
+			PlayerPrefs.SetInt ("NormalMode", 0);
+			SceneManager.LoadScene (1);
 		}
 		else if (CompareTag("ExitGame"))
 		{
