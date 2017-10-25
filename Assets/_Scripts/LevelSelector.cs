@@ -79,6 +79,7 @@ public class LevelSelector : MonoBehaviour {
 		{
 			if (!this._isLocked)
 			{
+				Debug.Log ("Not Locked, possibly completed");
 				if (this.name == "lvl1")
 				{
 					SceneManager.LoadScene ("level_1");
@@ -103,19 +104,19 @@ public class LevelSelector : MonoBehaviour {
 	{
 		if (PlayerPrefs.GetInt ("NormalMode", 0) == 1)
 		{
-			if (PlayerPrefs.GetInt ("lvl1", 1) == 1 && this.name == "lvl1")
+			if (PlayerPrefs.GetInt ("lvl1", 1) >= 1 && this.name == "lvl1")
 			{
 				this._isLocked = false;
 			}
-			if (PlayerPrefs.GetInt ("lvl2", 0) == 1 && this.name == "lvl2")
+			if (PlayerPrefs.GetInt ("lvl2", 0) >= 1 && this.name == "lvl2")
 			{
 				this._isLocked = false;
 			}
-			if (PlayerPrefs.GetInt ("lvl3", 0) == 1 && this.name == "lvl3")
+			if (PlayerPrefs.GetInt ("lvl3", 0) >= 1 && this.name == "lvl3")
 			{
 				this._isLocked = false;
 			}
-			if (PlayerPrefs.GetInt ("lvl4", 0) == 1 && this.name == "lvl4")
+			if (PlayerPrefs.GetInt ("lvl4", 0) >= 1 && this.name == "lvl4")
 			{
 				this._isLocked = false;
 			}
