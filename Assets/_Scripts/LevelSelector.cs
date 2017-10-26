@@ -44,11 +44,6 @@ public class LevelSelector : MonoBehaviour {
 			this.GetComponent<Renderer> ().material.color = this._completedColor;
 		}
 
-		if (Input.GetKeyDown(KeyCode.R))
-		{
-			PlayerPrefs.DeleteAll ();
-		}
-
 		if (this._shouldRotate)
 		{
 			this.transform.rotation = Quaternion.RotateTowards (this.transform.rotation, this._initRot, 1f);
@@ -96,6 +91,14 @@ public class LevelSelector : MonoBehaviour {
 				{
 					SceneManager.LoadScene ("level_4");
 				}
+			}
+			if (this.name == "Reset")
+			{
+				PlayerPrefs.DeleteKey ("lvl1");
+				PlayerPrefs.DeleteKey ("lvl2");
+				PlayerPrefs.DeleteKey ("lvl3");
+				PlayerPrefs.DeleteKey ("lvl4");
+				SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
 			}
 		}
 	}

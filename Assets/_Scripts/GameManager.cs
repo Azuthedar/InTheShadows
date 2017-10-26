@@ -8,9 +8,10 @@ public class GameManager : MonoBehaviour {
 	public List<GameObject> goList;
 
 	private bool			_inPos;
+	private AudioSource 	_as;
 	// Use this for initialization
 	void Start () {
-		
+		this._as = GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
@@ -23,6 +24,8 @@ public class GameManager : MonoBehaviour {
 		}
 		if (this._inPos)
 		{
+			if (!this._as.isPlaying)
+				this._as.Play ();
 			Invoke ("InvokeLevelComplete", 5f);
 		}
 	}

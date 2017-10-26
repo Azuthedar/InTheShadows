@@ -16,7 +16,6 @@ public class MenuController : MonoBehaviour {
 
 	void OnClick()
 	{
-		Debug.Log ("Clicked");
 		if (CompareTag("NMode"))
 		{
 			PlayerPrefs.SetInt ("NormalMode", 1);

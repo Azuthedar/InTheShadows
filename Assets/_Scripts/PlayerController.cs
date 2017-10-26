@@ -104,8 +104,6 @@ public class PlayerController : MonoBehaviour {
 
 	void checkRotation()
 	{
-		bool levelComplete = false;
-
 		float offset_x = Mathf.Abs(Mathf.DeltaAngle (this._initialRot.x, transform.rotation.eulerAngles.x));
 		float offset_y = Mathf.Abs(Mathf.DeltaAngle (this._initialRot.y, transform.rotation.eulerAngles.y));
 		if ((offset_x <= this._leniency || offset_x >= 180 - this._leniency) && offset_y <= this._leniency)
@@ -135,7 +133,6 @@ public class PlayerController : MonoBehaviour {
 		{
 			this.transform.rotation = Quaternion.Euler (Random.Range (0.0f, 360.0f), Random.Range (0.0f, 360.0f), 0);
 		}
-
 	}
 #endregion
 
